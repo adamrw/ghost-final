@@ -1,0 +1,3 @@
+[submodule "GhostTheme1"]
+  path = content/themes/ghost-theme1
+  url = https://github.com/adamrw/ghost-theme1
