@@ -11,15 +11,15 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://adams-ghost-setup.herokuapp.com',
-        // mail: {
-        //     transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: 'postmaster@sandboxc61ecfdb345a4343bc7036c53f296527.mailgun.org', // mailgun username
-        //              pass: '5fb6bf982cd81c296ee210d201f7dd1d'  // mailgun password
-        //          }
-        //      }
+        mail: {
+            transport: 'SMTP',
+             options: {
+                 service: 'Mailgun',
+                 auth: {
+                     user: 'postmaster@sandboxc61ecfdb345a4343bc7036c53f296527.mailgun.org', // mailgun username
+                     pass: '5fb6bf982cd81c296ee210d201f7dd1d'  // mailgun password
+                 }
+             }
         },
         database: {
             client: 'postgres',
