@@ -60,8 +60,8 @@ config = {
              options: {
                  service: 'Mailgun',
                  auth: {
-                     user: 'postmaster@sandboxc61ecfdb345a4343bc7036c53f296527.mailgun.org', // mailgun username
-                     pass: '5fb6bf982cd81c296ee210d201f7dd1d'  // mailgun password
+                     user: mailgun_user,
+                     pass: mailgun_pass 
                  }
              }
          },
