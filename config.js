@@ -5,6 +5,17 @@
 var path = require('path'),
     config;
 
+if (process.env.MAILGUN_USER) {
+    var mailgun_user = process.env.MAILGUN_USER;
+    var mailgun_pass = process.env.MAILGUN_PASS;
+}
+
+else {
+    var privateVars = require('./private.js');
+    var mailgun_user = privateVars.mailgun.user;
+    var mailgun_pass = privateVars.mailgun.pass;
+}
+
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment
@@ -12,13 +23,13 @@ config = {
     production: {
         url: 'http://adams-ghost-setup.herokuapp.com',
             mail: {
-        //     transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: 'postmaster@sandboxc61ecfdb345a4343bc7036c53f296527.mailgun.org', // mailgun username
-        //              pass: '5fb6bf982cd81c296ee210d201f7dd1d'  // mailgun password
-        //          }
+            transport: 'SMTP',
+             options: {
+                 service: 'Mailgun',
+                 auth: {
+                     user: mailgun_user,
+                     pass: mailgun_pass 
+                 }
              }
         },
         database: {
